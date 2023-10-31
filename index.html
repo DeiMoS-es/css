@@ -1,37 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8" >
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#09f">
     <!-- Etiquetas para seo -->
-    <meta name="description" content="Portfolio Armando Ingeniero de Software, 15 años de experiencia"> <!--etiquta de descriptcion para buscador-->
+    <meta name="description" content="Portfolio Armando Ingeniero de Software, 15 años de experiencia">
+    <!--etiquta de descriptcion para buscador-->
     <!-- OPEN GRAPH -->
     <meta property="og:title" content="PortFolio de un Ingeniero de Software">
     <meta property="og:description" content="Portfolio Armando Ingeniero de Software, 15 años de experiencia">
     <meta property="og:image" content="img/yo.jpg">
     <meta property="og:image:alt" content="Una foto de Armando">
 
-    <link rel="alternate" href="https://armando.dev/en" hreflang="en-GB"> <!-- Enlazar a un contenido alternativo, por ejemplo traducido al inglés-->
-    <link rel="canonical" href="https://armando.dev"> <!-- Indicamos cual es la página que realmente es la principal del sitio, ej: si google etra a www.armando.dev o armando.dev las va a tratar como si fuese la misma página. Lo correcto sería redireccionar -->
-    
+    <link rel="alternate" href="https://armando.dev/en" hreflang="en-GB">
+    <!-- Enlazar a un contenido alternativo, por ejemplo traducido al inglés-->
+    <link rel="canonical" href="https://armando.dev">
+    <!-- Indicamos cual es la página que realmente es la principal del sitio, ej: si google etra a www.armando.dev o armando.dev las va a tratar como si fuese la misma página. Lo correcto sería redireccionar -->
+
     <link rel="icon" type="image/jpg" href="img/yo.jpg">
+    <style>
+        body {
+            background-color: rgba(135, 221, 255, 0.9);
+        }
+    </style>
     <title>Prueba PortFolio</title>
 </head>
+
 <body>
-    <h1>Ejemplo de Portfolio de Armando</h1>
 
-    <p>+15 años de experiencia como <strong> Ingeniero de Software</strong>. Creador y divulgador de programación</p>
+    <head>
+        <!-- span para agrupar contenido en línea, div para agrupar en bloque -->
+        <h1>Ejemplo de Portfolio de Armando</h1>
+        <nav>
+            <a href="#experiencia">Experiencia</a><!-- con # le decimos que busque el id y navege hasta él-->
+            <a href="#proyectos">Proyectos</a><!-- enlaces internos-->
+            <a href="https://twitch.tv/" target="_blank"
+                rel="noreferrer">Twitch</a><!--rel="noreferrer" por seguridad no envia la cabecera de referer-->
+        </nav>
+    </head>
+    <dialog id="dialog">
+        <h1>¿Sabías que puedes abrir una modal así?</h1>
+        <p>¡Y es totalmente nativo!</p>
+        <button id="hide">Cerrar modal</button>
+    </dialog>
+    <button id="show">Ver más información</button>
+    <script>
+        //windows.shoe hace referencia al botón show, ya que cada vez que se usa una id, se crea en el objeto windows una propiedad con el nombre del id
+        window.show.addEventListener('click', () =>{
+            window.dialog.showModal();
+        })
+        window.hide.addEventListener('click', () =>{
+            window.dialog.close();
+        })
+    </script>
+    <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/JQUytmO-iA0?si=EG3jP2KhJLLh6CbU"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe> -->
+    <!-- <video autoplay muted loop poster="img/yo.jpg" controls src="video/video.mp4"></video> -->
+    <main>
 
-    <h2>Experiencia</h2>
+        <p>+15 años de experiencia como <strong> Ingeniero de Software</strong>. Creador y divulgador de programación
+        </p>
 
-    <ul>
-        <li class="list-item">Adevinta - 2022</li>
-        <li class="list-item">Hubii - 2020</li>
-        <li class="list-item">Nacencia- 2015</li>
-    </ul>
-    <img id="photo-image" width="250" height="200" title="foto de un señor" src="/img/yo.jpg" alt="una imgaen de muestra" ><!--Las comillas cuando es un nº no son obligatorias, por ejemplo en el width y en el height-->
-    
+        <h2 id="experiencia">Experiencia</h2>
+
+        <ul>
+            <li class="list-item">Adevinta - 2022</li>
+            <li class="list-item">Hubii - 2020</li>
+            <li class="list-item">Nacencia- 2015</li>
+        </ul>
+        <a download
+            href="/img/yo.jpg"><!-- "obligar" a descargar recursos. Solo funciona con recursos de tu propi dominio-->
+            <!--con loading="lazy" conseguimos que cargue las imágenes que no necesitas más tarde, no usar en imágenes que aparecen muy arriba
+                otra forma de estilar la img: style="width:100%; aspect-ratio: 3/2;"
+            -->
+            <img loading="lazy" id="photo-image" width="250" height="200" title="foto de un señor" src="/img/yo.jpg"
+                alt="una imgaen de muestra"><!--Las comillas cuando es un nº no son obligatorias, por ejemplo en el width y en el height-->
+        </a>
+        <h2 id="proyectos">Proyectos realizados</h2>
+
+        <aside>
+            <!-- representa una sección de una página que consiste en contenido que está indirectamente relacionado con el contenido principal del documento. Algo anexo al contenido principal-->
+            <header>
+                <h3>Mis tecnologías favoritas</h3>
+            </header>
+            <ol type="1" reversed start="10">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li value="5">JavaScript</li>
+                <li>Node.js</li>
+            </ol>
+        </aside>
+
+        <section><!-- representa una sección genérica de un documento. -->
+            <article><!-- elemento con información propia, que si extraes a otro sitio sigue teniendo sentido -->
+                <header><!-- puede existir más de un header -->
+                    <h4>Sitio Web Corporativo</h4>
+                </header>
+                <p>Desarrollo de un sitio web corporativo con una interfaz amigable y moderna.</p>
+                <footer><small> Tecnologías utilizadas: HTML, CSS, JavaScript </small></footer>
+            </article>
+            <article><!-- elemento con información propia, que si extraes a otro sitio sigue teniendo sentido -->
+                <header>
+                    <h4>Sitio Web Corporativo</h4>
+                </header>
+                <p>Desarrollo de un sitio web corporativo con una interfaz amigable y moderna.</p>
+                <footer><small> Tecnologías utilizadas: HTML, CSS, JavaScript </small></footer>
+            </article>
+            <article><!-- elemento con información propia, que si extraes a otro sitio sigue teniendo sentido -->
+                <header>
+                    <h4>Sitio Web Corporativo</h4>
+                </header>
+                <p>Desarrollo de un sitio web corporativo con una interfaz amigable y moderna.</p>
+                <footer><small> Tecnologías utilizadas: HTML, CSS, JavaScript </small></footer>
+            </article>
+        </section>
+
+        <section>
+            <h2>Preguntas frecuentes</h2>
+            <details open>
+                <summary>¿Qué estudios tienes?</summary>
+                <p>Estudié en la universidad Europea una Ingienería Informática daunte 5 años</p>
+            </details>
+            <details>
+                <summary>¿Cuáles son tus hobbies</summary>
+                <p>Me gusta mucho el deporte, sobretodo el fútbol y el baloncesto</p>
+            </details>
+            <details>
+                <summary>¿Cuál es tu lenguaje favorito?</summary>
+                <p>Me encanta JavaScript, es un lenguaje muy versátil y con el que se pueden hacer muchas cosas</p>
+            </details>
+        </section>
+        <section>
+            <h2>Formulario de contacto</h2>
+            <form action="/" method="post">
+                <fieldset> <!-- agrupación para inputs-->
+                    <legend>Información Personal</legend>
+                    <label for="name">Nombre:</label>
+                    <input required type="text" id="name" name="name" placeholder="Armando Bronca Segura">
+                    <label>Email: <!--otra forma de conseguir llevar el focus al input-->
+                        <input required type="email" name="email" placeholder="prueba@gmail.com">
+                    </label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Información Adicional</legend>
+                    <label for="telefono">Teléfono:</label>
+                    <input required type="tel" id="telefono" name="name" placeholder="+34123456789" pattern="[0-9]{9}">
+                </fieldset>
+                <div>
+                    <datalist id="languages">
+                        <option value="JavaScript"></option>
+                        <option value="Python"></option>
+                        <option value="Java"></option>
+                        <option value="C#"></option>
+                    </datalist>
+                    <label for="">¿Con qué lenguaje quieres que te ayudo?</label>
+                    <input list="languages">
+                </div>
+
+                <input type="submit" value="Enviar contacto">
+                <button>Enviar contacto</button><!-- botones dentro de un formulario son por defecto de tipo submit-->
+            </form>
+        </section>
+    </main>
+    <footer>
+        Copyright 2023
+        <a href="mailto:prueba@gmail.com">Envíame un correo</a>
+        <a href="tel:+34123456789">Llamar por teléfono</a>
+        <a href="whatsapp://send?text=Hola Armando">Mandar whatsapp</a>
+    </footer>
 </body>
+
 </html>
