@@ -21,11 +21,7 @@
     <!-- Indicamos cual es la página que realmente es la principal del sitio, ej: si google etra a www.armando.dev o armando.dev las va a tratar como si fuese la misma página. Lo correcto sería redireccionar -->
 
     <link rel="icon" type="image/jpg" href="img/yo.jpg">
-    <style>
-        body {
-            background-color: rgba(135, 221, 255, 0.9);
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
     <title>Prueba PortFolio</title>
 </head>
 
@@ -34,10 +30,11 @@
     <head>
         <!-- span para agrupar contenido en línea, div para agrupar en bloque -->
         <h1>Ejemplo de Portfolio de Armando</h1>
+        <!-- <h1>Otro h1</h1> -->
         <nav>
-            <a href="#experiencia">Experiencia</a><!-- con # le decimos que busque el id y navege hasta él-->
-            <a href="#proyectos">Proyectos</a><!-- enlaces internos-->
-            <a href="https://twitch.tv/" target="_blank"
+            <a class="link" href="#experiencia">Experiencia</a><!-- con # le decimos que busque el id y navege hasta él-->
+            <a class="link" href="#proyectos">Proyectos</a><!-- enlaces internos-->
+            <a class="link" href="https://twitch.tv/" target="_blank"
                 rel="noreferrer">Twitch</a><!--rel="noreferrer" por seguridad no envia la cabecera de referer-->
         </nav>
     </head>
@@ -63,7 +60,7 @@
     <!-- <video autoplay muted loop poster="img/yo.jpg" controls src="video/video.mp4"></video> -->
     <main>
 
-        <p>+15 años de experiencia como <strong> Ingeniero de Software</strong>. Creador y divulgador de programación
+        <p class="description">+15 años de experiencia como <strong> Ingeniero de Software</strong>. Creador y divulgador de programación
         </p>
 
         <h2 id="experiencia">Experiencia</h2>
