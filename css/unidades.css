@@ -12,11 +12,11 @@ span{/*Para los elementos en línea no le afecta la altura ni la anchura*/
 
 body{
     margin: 0;
-    background-color: #09f;
+    background: rgb(188, 228, 255);
 }
 
 section.container2{
-    background-color: white;
+    background: white;
     width: 100px;
     height: 100px;
     color: purple;
@@ -25,4 +25,46 @@ section.container2{
     /* el padding y el border hacen que la caja crezca padding añade 10px de un lado más 10 del otro, border lo mismo, tamaño total 140. El margin no afecta ni al ancho ni al largo */
     box-sizing: border-box;/* el alto y el ancho ahora si es lo que marca el width y el height y el padding y el border se incluye dentro*/
     /* box-sizing: content-box; opción por defecto */
+}
+
+.desbordamiento{
+    /*DESBORDA*/
+    width: 150px;
+    height: 150px;
+    background: white;
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 36px;
+    /*------------*/
+    /*SOLUCION 1*/
+    /* overflow: auto; */
+    /*SOLUCION 2*/
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+section{
+    border: 5px solid #000;
+    width: 300px;
+    height: 300px;
+    box-sizing: border-box;
+    /*position: relative;*//*creamos un punto de referencia relativo para que cualquiera de los hijos lo tome como referencia*/
+}
+.contenedor{
+    background: white;
+    width: 100px;
+    height: 100px;
+    /*position: absolute;*//*todo el documento*/  
+    /*forma larga de decir las posiciones*/  
+    /* right: 0;
+    top: 0;
+    left: 0;
+    bottom: 0; */
+    /*forma corta*/
+    /* inset: 0; */
+    /*otra posición*/
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: auto;/*detecta que tiene que tener la misma distancia por todos los lados*/
 }
