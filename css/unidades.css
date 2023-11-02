@@ -1,0 +1,28 @@
+span{/*Para los elementos en línea no le afecta la altura ni la anchura*/
+    background: green;
+    width: 500px;
+    height: 100px;
+}
+.container{
+    width: 50vw;
+    height: 50vh;
+    background-color: red;
+    border: 1px solid green;
+}
+
+body{
+    margin: 0;
+    background-color: #09f;
+}
+
+section.container2{
+    background-color: white;
+    width: 100px;
+    height: 100px;
+    color: purple;
+    padding: 10px;
+    border: 10px solid green;
+    /* el padding y el border hacen que la caja crezca padding añade 10px de un lado más 10 del otro, border lo mismo, tamaño total 140. El margin no afecta ni al ancho ni al largo */
+    box-sizing: border-box;/* el alto y el ancho ahora si es lo que marca el width y el height y el padding y el border se incluye dentro*/
+    /* box-sizing: content-box; opción por defecto */
+}
